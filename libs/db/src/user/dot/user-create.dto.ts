@@ -23,7 +23,7 @@ export class UserCreateDot {
   identity: string;
 
   @ApiProperty({ description: '商户' })
-  store: string;
+  store: string[];
 
   @ApiProperty({ description: '昵称' })
   name: string;

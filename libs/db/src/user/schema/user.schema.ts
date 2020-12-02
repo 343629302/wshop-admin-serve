@@ -5,8 +5,8 @@ export const UserSchema = new mongoose.Schema({
   password: String,
   identity: String,
   store: {
-    type: String,
-    default: '',
+    type: Array,
+    default: [],
   },
   wx: {
     type: String,

@@ -16,6 +16,9 @@ export class UserUpdateDot {
   @ApiProperty({ description: '昵称' })
   name: string;
 
+  @ApiProperty({ description: '商户' })
+  store: string[];
+
   @ApiProperty({ description: '邮箱' })
   @IsOptional()
   @IsEmail(
