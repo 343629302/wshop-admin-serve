@@ -11,9 +11,10 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { ApiOperation } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
 @Controller('themes')
+@ApiTags('主题颜色')
 export class ThemesController {
   constructor(private readonly themeService: ThemeService) {}
 
