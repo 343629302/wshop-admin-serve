@@ -31,15 +31,6 @@ export class UsersController {
     };
   }
 
-  @Get('/list')
-  @ApiOperation({ summary: '用户列表' })
-  async list() {
-    const res = await this.uesrService.findAll();
-    return success({
-      res,
-    });
-  }
-
   @Post('/create')
   @ApiOperation({ summary: '创建管理员' })
   async create(@Body() body: UserCreateDot) {

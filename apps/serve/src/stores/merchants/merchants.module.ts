@@ -1,4 +1,4 @@
-import { MerchantModule } from '@libs/db/sotre/merchant/merchant.module';
+import { MerchantModule } from '@libs/db/store/merchant/merchant.module';
 import { Module } from '@nestjs/common';
 import { MerchantsController } from './merchants.controller';
 

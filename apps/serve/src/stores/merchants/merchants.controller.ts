@@ -1,7 +1,7 @@
 import { success } from '@libs/db/common/success';
-import { MerchantDeleteDot } from '@libs/db/sotre/merchant/dot/merchant-delete.dto';
-import { MerchantUpdateDot } from '@libs/db/sotre/merchant/dot/merchant-update.dot';
-import { MerchantService } from '@libs/db/sotre/merchant/merchant.service';
+import { MerchantDeleteDot } from '@libs/db/store/merchant/dot/merchant-delete.dto';
+import { MerchantUpdateDot } from '@libs/db/store/merchant/dot/merchant-update.dot';
+import { MerchantService } from '@libs/db/store/merchant/merchant.service';
 import {
   Body,
   Controller,
@@ -22,7 +22,7 @@ export class MerchantsController {
   constructor(private readonly merchantService: MerchantService) {}
 
   @Get('/list')
-  @ApiOperation({ summary: '商户列表' })
+  @ApiOperation({ summary: '获取商户列表' })
   async list() {
     const res = await this.merchantService.findAll();
     return success({

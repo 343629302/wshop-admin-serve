@@ -1,7 +1,7 @@
 import { success } from '@libs/db/common/success';
-import { DecorationService } from '@libs/db/sotre/decoration/decoration.service';
-import { DecorationCreateDot } from '@libs/db/sotre/decoration/dot/decoration-create.dto';
-import { DecorationDeleteDot } from '@libs/db/sotre/decoration/dot/decoration-delete.dto';
+import { DecorationService } from '@libs/db/store/decoration/decoration.service';
+import { DecorationCreateDot } from '@libs/db/store/decoration/dot/decoration-create.dto';
+import { DecorationDeleteDot } from '@libs/db/store/decoration/dot/decoration-delete.dto';
 import {
   Body,
   Controller,
@@ -17,12 +17,12 @@ import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { isValidObjectId } from 'mongoose';
 
 @Controller('decorations')
-@ApiTags('装修页面')
+@ApiTags('店铺页面')
 export class DecorationsController {
   constructor(private readonly decorationService: DecorationService) {}
 
   @Get('/list')
-  @ApiOperation({ summary: '页面列表' })
+  @ApiOperation({ summary: '获取页面列表' })
   async list() {
     const res = await this.decorationService.findAll();
     return success({

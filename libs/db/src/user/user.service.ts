@@ -10,14 +10,14 @@ export class UserService {
   constructor(@InjectModel('User') private readonly userModel: Model<User>) {}
 
   //创建用户数据
-  async created(userCreateDot: UserCreateDot) {
-    const createdUser = new this.userModel(userCreateDot);
+  async created(userCreate: UserCreateDot) {
+    const createdUser = new this.userModel(userCreate);
     return await createdUser.save();
   }
 
   //更新用户数据
-  async update(id: string, userCreateDot: UserUpdateDot) {
-    return await this.userModel.updateOne({ _id: id }, userCreateDot);
+  async update(id: string, userCreate: UserUpdateDot) {
+    return await this.userModel.updateOne({ _id: id }, userCreate);
   }
 
   //查询全部用户

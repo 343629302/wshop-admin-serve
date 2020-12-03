@@ -11,21 +11,14 @@ export class MerchantService {
   ) {}
 
   //创建商户数据
-  async created(id?: string) {
-    let createdMerchant: Merchant;
-    if (id) {
-      createdMerchant = new this.merchantModel({
-        _id: id,
-      });
-    } else {
-      createdMerchant = new this.merchantModel();
-    }
+  async created() {
+    const createdMerchant: Merchant = new this.merchantModel();
     return await createdMerchant.save();
   }
 
   //更新商户数据
-  async update(id: string, merchantUpdateDot: MerchantUpdateDot) {
-    return await this.merchantModel.updateOne({ _id: id }, merchantUpdateDot);
+  async update(id: string, merchantUpdate: MerchantUpdateDot) {
+    return await this.merchantModel.updateOne({ _id: id }, merchantUpdate);
   }
 
   //查询全部商户
@@ -45,4 +38,3 @@ export class MerchantService {
     });
   }
 }
-
